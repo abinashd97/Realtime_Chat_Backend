@@ -1,4 +1,4 @@
-This Real-Time Chat App allows users to send and receive messages instantly with multiple participants. It uses WebSockets for fast, bi-directional communication.
+This Real-Time Chat App allows users to send and receive messages instantly with multiple participants. 
 
 ### Key Features
 - Instant message delivery without page reloads
