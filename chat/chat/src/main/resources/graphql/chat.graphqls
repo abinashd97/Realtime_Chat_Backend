@@ -1,0 +1,37 @@
+type User {
+    id: ID!
+    username: String!
+    displayName: String
+}
+
+type ChatRoom {
+    id: ID!
+    name: String!
+}
+
+type Message {
+    id: ID!
+    sender: User!
+    room: ChatRoom!
+    content: String!
+    timestamp: String!
+}
+
+# === QUERIES ===
+type Query {
+    users: [User!]!
+    rooms: [ChatRoom!]!
+    messagesByRoom(roomId: String!): [Message!]!
+}
+
+# === MUTATIONS ===
+type Mutation {
+    createUser(username: String!, displayName: String): User!
+    createRoom(name: String!): ChatRoom!
+    sendMessage(senderId: String!, roomId: String!, content: String!): Message!
+}
+
+# === SUBSCRIPTIONS ===
+type Subscription {
+    messageAdded(roomId: String!): Message!
+}
